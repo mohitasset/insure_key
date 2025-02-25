@@ -8,3 +8,4 @@ langchain-chroma
 groq
 python-dotenv
 streamlit
+chromadb
