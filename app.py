@@ -37,7 +37,7 @@ def get_vector_store():
     vector_store = Chroma(
         collection_name="insure_key",
         embedding_function=embeddings,
-        persist_directory="./chromadb"
+        persist_directory="/tmp/chromadb"
     )
     return vector_store
 
