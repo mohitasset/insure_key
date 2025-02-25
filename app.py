@@ -79,6 +79,7 @@ def generate_response(query, context):
 user_question = st.text_input(label="",placeholder="Ask your query....")
 
 if user_question:
-    context = search_vector_db(user_question)
-    res = generate_response(user_question, context)
-    st.write(res)
+    with st.spinner():
+        context = search_vector_db(user_question)
+        res = generate_response(user_question, context)
+        st.write(res)
