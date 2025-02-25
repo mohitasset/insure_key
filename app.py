@@ -60,8 +60,10 @@ def search_vector_db(query):
 
 def generate_response(query, context):
     prompt = f"""
-    You have all the knowledge related to the Insure key in Assetplus. You have the ability to look at the context and give the answer accordingly. You always tend to give the right answer if the answer is not given in the context then reply with I don't know.
+    You have the ability to look at the context and give the answer accordingly. You always tend to give the right answer if the answer is not given in the context provided by the user then reply with I don't know. Do not answer any question whose context does not contain the answer to that question
     """
+
+    messages.append({"role" : "system", "content" : prompt})
     messages.append({"role" : "user", "content" : f"""
     Query : {query}
     Context : {context}
